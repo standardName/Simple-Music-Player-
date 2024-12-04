@@ -5,19 +5,9 @@ import { LuSkipBack } from "react-icons/lu";
 import { LuPlay } from "react-icons/lu";
 import { LuSkipForward } from "react-icons/lu";
 import { playerStore } from "@/lib/store";
-
 import { Track } from "@/types";
-function AudioControls() {
-  // const {
-  //   play,
-  //   audioRef,
-  //   setPlay,
-  //   setCurrentTrack,
-  //   data,
-  //   currentTrack,
-  //   setDuration,
-  // } = useStore(playerStore);
 
+function AudioControls() {
   const play = playerStore((state) => state.play);
   const audioRef = playerStore((state) => state.audioRef);
   const data = playerStore((state) => state.data);

@@ -30,7 +30,19 @@
   top: 0.4525rem;
   font-size: 1.2rem;
 }
+.search-item {
+  position: relative;
+  padding: 0.625rem;
+  background-color: #313237;
+  z-index: 999;
+  width: 90%;
+  margin: auto;
+}
 
+.search-item:hover {
+  background-color: #5b5c61;
+  cursor: pointer;
+}
 /* User-Control */
 .user-control {
   width: 50%;

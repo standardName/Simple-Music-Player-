@@ -7,6 +7,17 @@ import { Track } from "@/types";
 function Search() {
   const [res, setRes] = useState<Track[]>([]);
   const data = playerStore((state) => state.data);
+  const audioRef = playerStore((state) => state.audioRef);
+  const setCurrentTrack = playerStore((state) => state.setCurrentTrack);
+  const setPlay = playerStore((state) => state.setPlay);
+  function setTrack(track: Track) {
+    if (audioRef.current) {
+      setCurrentTrack(track);
+      audioRef.current.load();
+      audioRef.current.play();
+      setPlay(true);
+    }
+  }
 
   function handleSearch(e: React.ChangeEvent<HTMLInputElement>) {
     if (data) {
@@ -39,7 +50,14 @@ function Search() {
       {res.length > 0 && (
         <div>
           {res.map((item) => (
-            <p key={item.id}>{item.track_name}</p>
+            <div
+              role="button"
+              className={styles["search-item"]}
+              key={item.id}
+              onClick={() => setTrack(item)}
+            >
+              {item.track_name}
+            </div>
           ))}
         </div>
       )}

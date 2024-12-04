@@ -1,10 +1,11 @@
 "use client";
 import styles from "@/app/styles/PopularSongs.module.css";
-import { playerStore } from "@/lib/store";
 import Image from "next/image";
 import ScrollSection from "./_subcomponents/ScrollSection";
+import { playerStore } from "@/lib/store";
 import { useMemo, useRef } from "react";
 import { Track } from "@/types";
+
 const background = [
   "#822007",
   "#2360a5",

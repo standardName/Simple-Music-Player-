@@ -19,6 +19,7 @@
   font-size: 0.625rem;
   color: #9b9fa0;
   text-align: center;
+  cursor: pointer;
 }
 .list li img {
   border-radius: 0.625rem;
